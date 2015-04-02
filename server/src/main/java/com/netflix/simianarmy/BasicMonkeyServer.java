@@ -15,7 +15,7 @@
  *     limitations under the License.
  *
  */
-package com.netflix.simianarmy.basic;
+package com.netflix.simianarmy;
 
 import java.io.IOException;
 import java.io.InputStream;

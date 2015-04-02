@@ -16,7 +16,7 @@
  *     limitations under the License.
  *
  */
-package com.netflix.simianarmy.basic;
+package com.netflix.simianarmy;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

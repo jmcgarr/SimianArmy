@@ -1,1 +1,5 @@
 rootProject.name='simianarmy'
+include 'core', 'server'
+
+project(':core').name = 'simianarmy-core'
+project(':server').name = 'simianarmy'

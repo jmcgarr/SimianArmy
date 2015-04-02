@@ -1,0 +1,16 @@
+apply plugin: 'war'
+apply plugin: 'jetty'
+apply plugin: 'eclipse-wtp'
+
+dependencies {
+    compile project(':simianarmy-core')
+    compile 'com.sun.jersey:jersey-servlet:1.11'
+
+    testCompile 'org.testng:testng:6.3.1'
+    testCompile 'org.mockito:mockito-core:1.8.5'
+    testCompile project( path:':simianarmy-core', configuration:'test' )
+
+    providedCompile 'javax.servlet:servlet-api:2.5'
+
+    runtime 'org.slf4j:slf4j-log4j12:1.6.1'
+}
