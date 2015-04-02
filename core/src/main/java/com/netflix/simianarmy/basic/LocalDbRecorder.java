@@ -38,7 +38,6 @@ import com.netflix.simianarmy.EventType;
 import com.netflix.simianarmy.MonkeyConfiguration;
 import com.netflix.simianarmy.MonkeyRecorder;
 import com.netflix.simianarmy.MonkeyType;
-import com.netflix.simianarmy.chaos.ChaosMonkey;
 
 /**
  * Replacement for SimpleDB on non-AWS: use an embedded db.
@@ -306,22 +305,23 @@ public class LocalDbRecorder implements MonkeyRecorder {
     /** Appears to be used for testing, if so should be moved to a unit test. (2/16/2014, mgeis)
      * @param args
      */
-    public static void main(String[] args) {
-        LocalDbRecorder r = new LocalDbRecorder(null);
-        r.init();
-        List<Event> events2 = r.findEvents(new HashMap<String, String>(), new Date(0));
-        for (Event event : events2) {
-            System.out.println("Got:" + event + ": " + event.eventTime().getTime());
-        }
-        for (int i = 0; i < 10; i++) {
-            Event event = r.newEvent(ChaosMonkey.Type.CHAOS,
-                    ChaosMonkey.EventTypes.CHAOS_TERMINATION, "1", "1");
-            r.recordEvent(event);
-            System.out.println("Added:" + event + ": " + event.eventTime().getTime());
-        }
-        List<Event> events = r.findEvents(new HashMap<String, String>(), new Date(0));
-        for (Event event : events) {
-            System.out.println("Got:" + event + ": " + event.eventTime().getTime());
-        }
-    }
+    // Note: removing this method...cause it makes me sad
+    //public static void main(String[] args) {
+    //    LocalDbRecorder r = new LocalDbRecorder(null);
+    //    r.init();
+    //    List<Event> events2 = r.findEvents(new HashMap<String, String>(), new Date(0));
+    //    for (Event event : events2) {
+    //        System.out.println("Got:" + event + ": " + event.eventTime().getTime());
+    //    }
+    //    for (int i = 0; i < 10; i++) {
+    //        Event event = r.newEvent(ChaosMonkey.Type.CHAOS,
+    //                ChaosMonkey.EventTypes.CHAOS_TERMINATION, "1", "1");
+    //        r.recordEvent(event);
+    //        System.out.println("Added:" + event + ": " + event.eventTime().getTime());
+    //    }
+    //    List<Event> events = r.findEvents(new HashMap<String, String>(), new Date(0));
+    //    for (Event event : events) {
+    //        System.out.println("Got:" + event + ": " + event.eventTime().getTime());
+    //    }
+    //}
 }
