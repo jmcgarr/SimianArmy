@@ -6,6 +6,7 @@ dependencies {
     compile project(':simianarmy-core')
     compile project(':chaos-monkey')
     compile project(':janitor-monkey')
+    compile project(':conformity-monkey')
     compile 'com.sun.jersey:jersey-servlet:1.11'
 
     testCompile 'org.testng:testng:6.3.1'
