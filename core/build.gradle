@@ -1,9 +1,5 @@
 apply plugin: 'nebula-test-jar'
 
-test {
-    useTestNG()
-}
-
 dependencies {
     // for the VMWareClient
     compile 'com.cloudbees.thirdparty:vijava:5.0.0'

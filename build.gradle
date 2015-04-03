@@ -4,6 +4,8 @@ plugins {
 }
 allprojects {
     apply plugin: 'java'
+    apply plugin: 'nebula-source-jar'
+    apply plugin: 'nebula-javadoc-jar'
 }
 
 subprojects {
@@ -13,6 +15,10 @@ subprojects {
     repositories {
         mavenLocal()
         jcenter()
+    }
+
+    test {
+        useTestNG()
     }
 
     tasks.withType(JavaCompile) {
